@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GuidePath Frontend
+
+GuidePath is a comprehensive study abroad mentorship platform connecting prospective international students with university mentors for guidance, advice, and networking.
+
+This repository contains the production-ready frontend web application.
+
+## System Architecture & Tech Stack
+
+This project is built using modern frontend architecture optimized for performance, type safety, and maintainability:
+
+- **Framework**: Next.js 14+ (App Router)
+- **Language**: TypeScript (Strict Mode)
+- **Styling**: Tailwind CSS v3 + CSS Custom Properties for Theming
+- **UI Components**: Headless primitives wrapped with Radix UI patterns + Framer Motion
+- **State Management**: Zustand
+- **Data Fetching**: TanStack Query (React Query v5)
+- **Forms & Validation**: React Hook Form + Zod
+- **API Client**: Axios (Typed)
+- **Package Manager**: npm
+
+## Project Structure
+
+```
+guidepath/
+├── public/                 # Static assets (images, fonts, etc)
+├── src/
+│   ├── app/                # Next.js App Router (pages and layouts)
+│   ├── components/
+│   │   ├── ui/             # Reusable design system components
+│   │   ├── layout/         # Structural components (Navbar, Footer)
+│   │   ├── landing/        # Home page sections
+│   │   ├── explore/        # Sidebar filters and data grids
+│   │   ├── profile/        # Detail and overview views
+│   │   └── dashboard/      # Authenticated user dashboard
+│   ├── lib/
+│   │   ├── api/            # Axios client and SDK wrappers
+│   │   ├── hooks/          # React Query hook wrappers
+│   │   ├── store/          # Zustand global stores
+│   │   └── utils/          # Formatting and UI utility functions
+│   ├── types/              # Global TypeScript definitions
+│   └── providers/          # Context providers for the application shell
+├── tailwind.config.ts      # Tailwind and theme configuration
+└── vercel.json             # Vercel deployment configuration
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Ensure you have Node.js 18+ and `npm` installed.
+
+### Environment Setup
+
+1. Copy the `.env.example` file to `.env.local`:
+```bash
+cp .env.example .env.local
+```
+2. Configure the required environment variables:
+- `NEXT_PUBLIC_API_URL`: The base URL pointing to the GuidePath backend services.
+
+### Development
+
+Install the project dependencies and start the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To create an optimized production build:
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application is configured for seamless deployment on Vercel.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Connect the GitHub repository to your Vercel account.
+2. Vercel will automatically detect the Next.js framework.
+3. Add the required environment variables (`NEXT_PUBLIC_API_URL`) in the Vercel project settings.
+4. Deploy.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The `vercel.json` file is included in the repository to enforce best-practice security headers (X-Frame-Options, X-Content-Type-Options) and optimize API request rewriting. Next.js configurations in `next.config.ts` are set to hide React DevTools and Next.js identification headers in production for enhanced security.
