@@ -4,6 +4,16 @@ GuidePath is a comprehensive study abroad mentorship platform connecting prospec
 
 This repository contains the production-ready frontend web application.
 
+<img width="1903" height="907" alt="image" src="https://github.com/user-attachments/assets/55195e13-f741-4ab5-9a05-f5b74abe767a" />
+<img width="1907" height="795" alt="image" src="https://github.com/user-attachments/assets/5029a63b-c1d5-4436-b7e0-ceee16a05cd1" />
+<img width="1905" height="817" alt="image" src="https://github.com/user-attachments/assets/2d55c287-71d1-468a-bd1b-04179b36b4e2" />
+<img width="1919" height="693" alt="image" src="https://github.com/user-attachments/assets/d12cf89f-a8b6-47b4-a7fc-4cb3d5b2e136" />
+
+<img width="1909" height="896" alt="image" src="https://github.com/user-attachments/assets/7d61d464-c029-457a-83b9-a4c761659d3d" />
+<img width="1905" height="901" alt="image" src="https://github.com/user-attachments/assets/837a6635-8941-45b6-ab8a-83bc650d842c" />
+
+<img width="1909" height="903" alt="image" src="https://github.com/user-attachments/assets/d3f0e79b-a915-4175-95a6-66af845d66b4" />
+
 ## System Architecture & Tech Stack
 
 This project is built using modern frontend architecture optimized for performance, type safety, and maintainability:
